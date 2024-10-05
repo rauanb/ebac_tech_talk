@@ -7,7 +7,7 @@ npm install --save-dev parcel
 # Criar estrutura de pastas
 mkdir -p src/{scripts,styles}
 
-# Criar arquivos base
+# Criar index.html
 cat << 'EOF' > src/index.html
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,9 @@ cat << 'EOF' > src/index.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.scss">
 </head>
 <body>
@@ -25,13 +28,18 @@ cat << 'EOF' > src/index.html
 </html>
 EOF
 
+# Criar main.js
 cat << 'EOF' > src/scripts/main.js
 console.log('Olá, parcel!');
 EOF
 
+# Criar main.scss
 cat << 'EOF' > src/styles/main.scss
-body {
-    background-color: gray;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
 }
 EOF
 
