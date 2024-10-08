@@ -2,7 +2,7 @@
 npm init --yes
 
 # Instalar Parcel (demorou cerca de 5 minutos)
-npm install --save-dev parcel
+npm install --save-dev parcel@2.8.0
 
 # Criar estrutura de pastas
 mkdir -p src/{scripts,styles}
@@ -44,7 +44,12 @@ cat << 'EOF' > src/styles/main.scss
 EOF
 
 # Adicionar nos scripts do package.json
+sed -i '/"scripts": {/a \    "build": "parcel build src/index.html",' package.json
 sed -i '/"scripts": {/a \    "dev": "parcel src/index.html src/scripts/main.js src/styles/main.scss",' package.json
+
+# Remover "main": "index.js" do package.json
+sed -i '/"main": "index.js",/d' package.json
+
 
 # Adicionar minificador
 cat <<'EOF' > sharp.config.json
