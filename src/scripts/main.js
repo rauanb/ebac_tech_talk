@@ -1,6 +1,6 @@
 AOS.init();
 
-const eventDate = new Date("Dec 12, 2022 19:00:00");
+const eventDate = new Date("Dec 12, 2024 19:00:00");
 const eventTimeStamp = eventDate.getTime();
 
 const countDown = setInterval(function(){
